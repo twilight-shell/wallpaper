@@ -1,5 +1,7 @@
 # twilight-shell/wallpaper
 
+[![ci](https://github.com/twilight-shell/wallpaper/actions/workflows/ci.yml/badge.svg)](https://github.com/twilight-shell/wallpaper/actions/workflows/ci.yml)
+
 The wallpaper of the [twilight-shell](https://github.com/twilight-shell)
 organization, drawn on the background layer of every screen. A new picture is
 revealed through a circle growing from the middle of the screen. Instead of a
@@ -83,6 +85,10 @@ qs -p /path/to/wallpaper ipc call wallpaper live stars     # "" turns it off
 The stars are a shader, `Twilight/Wallpaper/live/shaders/stars.frag`. The
 compiled `.qsb` next to it is committed; after editing the shader, run
 `scripts/build-shaders.sh` (needs `qsb`, Void: `qt6-shadertools-devel`).
+
+## Contributing
+
+Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md). Agents and the like: [AGENTS.md](AGENTS.md).
 
 ## License
 
