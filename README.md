@@ -42,14 +42,21 @@ wallpaper = "/home/me/Pictures/Wallpapers/twi.jpg"   # "" for the plain backgrou
 palette = "wallpaper"                                # or "twilight", a preset...
 ```
 
-The rest is in `~/.config/twilight-shell/wallpaper.toml`. Both files apply as
-soon as they are saved:
+The rest is in `~/.config/twilight-shell/wallpaper.toml`, created with the
+defaults the first time the wallpaper starts. Both files apply as soon as they
+are saved:
 
 ```toml
-dir = "~/Pictures/Wallpapers"   # where next and prev look for pictures
-live = ""                       # "stars" draws live stars over the picture
+# Where next and prev look for pictures.
+dir = "~/Pictures/Wallpapers"
+
+# A live wallpaper drawn over the picture: "stars", or "" for none. While it is
+# on, the theme doesn't take colors from the picture.
+live = ""
 
 [stars]
+# Size of a star, the distance between them, how fast the sky drifts, how far
+# the glow reaches.
 dot = 9
 cell = 300
 speed = 1
