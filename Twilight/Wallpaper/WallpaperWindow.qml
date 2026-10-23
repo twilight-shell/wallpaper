@@ -16,10 +16,10 @@ PanelWindow {
     property string path: ""
     // A live wallpaper drawn over the picture: "" or "stars".
     property string live: ""
-    property real starsDot: 9
-    property real starsCell: 300
-    property real starsSpeed: 1
-    property real starsGlow: 0.45
+    property real starsDot
+    property real starsCell
+    property real starsSpeed
+    property real starsGlow
 
     // Two pictures swap roles: the front one is shown, the other one
     // loads the next wallpaper and is revealed over it.

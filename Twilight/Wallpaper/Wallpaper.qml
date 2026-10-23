@@ -17,9 +17,9 @@ Scope {
     // The picture; "" for the plain background color.
     readonly property string path: Theme.wallpaper
     // Where `next` and `prev` look for pictures.
-    property string dir: expand(config.get("dir", "~/Pictures/Wallpapers"))
+    property string dir: expand(config.get("dir") ?? "")
     // A live wallpaper drawn over the picture: "" or "stars".
-    property string live: config.get("live", "")
+    property string live: config.get("live") ?? ""
 
     function expand(path: string): string {
         return path.startsWith("~") ? Quickshell.env("HOME") + path.slice(1) : path;
@@ -43,6 +43,7 @@ Scope {
         id: config
 
         name: "wallpaper"
+        defaults: Qt.resolvedUrl("wallpaper.defaults.toml")
     }
 
     // Written to when the picture or the palette is changed from here; Theme
@@ -65,7 +66,7 @@ Scope {
     FolderListModel {
         id: folder
 
-        folder: "file://" + root.dir
+        folder: root.dir !== "" ? "file://" + root.dir : ""
         nameFilters: ["*.jpg", "*.jpeg", "*.png", "*.webp"]
         showDirs: false
         sortField: FolderListModel.Name
@@ -101,10 +102,10 @@ Scope {
         WallpaperWindow {
             path: root.path
             live: root.live
-            starsDot: config.get("stars.dot", 9)
-            starsCell: config.get("stars.cell", 300)
-            starsSpeed: config.get("stars.speed", 1)
-            starsGlow: config.get("stars.glow", 0.45)
+            starsDot: Number(config.get("stars.dot"))
+            starsCell: Number(config.get("stars.cell"))
+            starsSpeed: Number(config.get("stars.speed"))
+            starsGlow: Number(config.get("stars.glow"))
         }
     }
 }

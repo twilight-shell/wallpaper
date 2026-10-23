@@ -6,10 +6,10 @@ import Twilight.Core
 ShaderEffect {
     id: root
 
-    property real dot: 9
-    property real cell: 300
-    property real speed: 1
-    property real glow: 0.45
+    property real dot
+    property real cell
+    property real speed
+    property real glow
 
     property real time: 0
     property vector2d resolution: Qt.vector2d(width, height)
